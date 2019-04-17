@@ -16,16 +16,24 @@ class App extends React.Component {
     );
   }
 
+  renderContent() {
+    if (this.state.errorMessage && !this.state.lat) {
+      return <div>Error: {this.state.errorMessage}</div>
+    }
+
+    if (!this.state.errorMessage && this.state.lat) {
+      return <ParisDisplay latitude={this.state.lat} longitude={this.state.lng}/>
+    }
+
+    return <div>Loading...</div>
+  }
+
   render() {
-      if (this.state.errorMessage && !this.state.lat) {
-        return <div>Error: {this.state.errorMessage}</div>
-      }
-
-      if (!this.state.errorMessage && this.state.lat) {
-        return <ParisDisplay latitude={this.state.lat} longitude={this.state.lng}/>
-      }
-
-      return <div>Loading...</div>
+    return (
+      <div>
+        {this.renderContent()}
+      </div>
+    )
   }
 }
 
