@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import ParisDisplay from './ParisDisplay';
+import Spinner from './Spinner';
 
 class App extends React.Component {
 
@@ -25,7 +26,7 @@ class App extends React.Component {
       return <ParisDisplay latitude={this.state.lat} longitude={this.state.lng}/>
     }
 
-    return <div>Loading...</div>
+    return <div><Spinner/></div>
   }
 
   render() {

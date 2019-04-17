@@ -24,7 +24,7 @@ const ParisDisplay = props => {
   const place = getPlace(props.latitude, props.longitude);
   const { text, iconName } = placeConfig[place];
   return (
-    <div>
+    <div className="paris-display">
       <i className={`icon ${iconName} massive icon-left` }></i>
       <h1>{text}</h1>
       <i className={`icon ${iconName} massive icon-right` }></i>
