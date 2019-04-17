@@ -1,8 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import ParisDisplay from './ParisDisplay';
 
-const App = () => {
-  return <div>Hi there!</div>
+class App extends React.Component {
+
+  render() {
+    return(
+      <ParisDisplay/>
+    )
+  }
 }
 
-export default App;
+ReactDOM.render(<App/>, document.querySelector('#root'));
