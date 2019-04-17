@@ -4,11 +4,13 @@ import './ParisDisplay.css';
 const placeConfig = {
   'paris': {
     text: 'You are in Paris',
-    iconName: 'thumbs up'
+    iconName: 'thumbs up',
+    background: 'paris'
   },
   'elsewhere': {
     text: 'You are not in Paris',
-    iconName: 'thumbs down'
+    iconName: 'thumbs down',
+    background: 'elsewhere'
   }
 }
 
@@ -22,9 +24,9 @@ const getPlace = (lat, lng) => {
 
 const ParisDisplay = props => {
   const place = getPlace(props.latitude, props.longitude);
-  const { text, iconName } = placeConfig[place];
+  const { text, iconName, background } = placeConfig[place];
   return (
-    <div className="paris-display">
+    <div className={`paris-display ${background}`}>
       <i className={`icon ${iconName} massive icon-left` }></i>
       <h1>{text}</h1>
       <i className={`icon ${iconName} massive icon-right` }></i>

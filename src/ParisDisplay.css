@@ -12,5 +12,15 @@
 
 .paris-display {
   height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
+.paris {
+  background-color: aliceblue;
+}
+
+.elsewhere {
+  background-color: orange;
 }
